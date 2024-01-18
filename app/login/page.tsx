@@ -8,17 +8,12 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
-import { loginToPage } from '@/store/auth/auth.slice'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
 export default function Login() {
-	const dispatch = useDispatch()
 	const router = useRouter()
 	const [showPassword, setShowPassword] = useState(false)
 	const [password, setPassword] = useState('')
-	dispatch(loginToPage())
-	console.log(loginToPage())
 
 	function handleLogin() {
 		const correctPassword = 'Oybek'
@@ -29,7 +24,6 @@ export default function Login() {
 			toast({
 				variant: 'destructive',
 				title: 'Password is Incorrect!.',
-				description: 'There was a problem with your request.',
 				action: <ToastAction altText='Try again'>Try again</ToastAction>,
 			})
 		}

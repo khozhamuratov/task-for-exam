@@ -3,7 +3,7 @@
 import { toast } from '@/components/ui/use-toast'
 import { loginToPage } from '@/store/auth/auth.slice'
 import { RootState } from '@/store/store'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
 import Header from './components/header/header'
 import SidebarMenu from './components/sidebar/sidebar-menu'
@@ -14,12 +14,13 @@ export default function HomeLayout({
 }: {
 	children: React.ReactNode
 }) {
+	const router = useRouter()
 	const logined = useSelector((state: RootState) => state.auth.logined)
 	const dispatch = useDispatch()
 
 	if (logined) {
 		dispatch(loginToPage())
-		redirect('/login')
+		router.push('/login')
 	} else {
 		toast({
 			variant: 'default',
