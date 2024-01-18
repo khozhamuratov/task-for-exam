@@ -5,7 +5,7 @@ interface IInitialStateType {
 }
 
 export const initialState: IInitialStateType = {
-	logined: false,
+	logined: true,
 }
 
 export const authSlice = createSlice({
@@ -13,7 +13,7 @@ export const authSlice = createSlice({
 	initialState,
 	reducers: {
 		loginToPage: state => {
-			state.logined = true
+			state.logined = false
 		},
 	},
 })

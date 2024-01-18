@@ -15,7 +15,7 @@ export default function HomeLayout({
 	const logined = useSelector((state: RootState) => state.auth.logined)
 	const dispatch = useDispatch()
 
-	if (!logined) {
+	if (logined) {
 		redirect('/login')
 	}
 
