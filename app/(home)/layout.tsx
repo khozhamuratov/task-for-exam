@@ -26,7 +26,6 @@ export default function HomeLayout({
 			title: 'Welcome to Dashboard',
 		})
 	}
-
 	return (
 		<div>
 			<Header />
