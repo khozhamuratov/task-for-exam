@@ -1,6 +1,7 @@
 'use client'
 
 import { toast } from '@/components/ui/use-toast'
+import { loginToPage } from '@/store/auth/auth.slice'
 import { RootState } from '@/store/store'
 import { redirect } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,6 +18,7 @@ export default function HomeLayout({
 	const dispatch = useDispatch()
 
 	if (logined) {
+		dispatch(loginToPage())
 		redirect('/login')
 	} else {
 		toast({
