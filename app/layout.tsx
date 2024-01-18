@@ -1,5 +1,6 @@
 import ReduxProvider from '@/components/providers/redux-provider'
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import { Toaster } from '@/components/ui/toaster'
 import type { Metadata } from 'next'
 import { Montserrat } from 'next/font/google'
 import './global.scss'
@@ -26,7 +27,10 @@ export default function RootLayout({
 					disableTransitionOnChange
 					storageKey='blog-theme'
 				>
-					<ReduxProvider>{children}</ReduxProvider>
+					<ReduxProvider>
+						{children}
+						<Toaster />
+					</ReduxProvider>
 				</ThemeProvider>
 			</body>
 		</html>

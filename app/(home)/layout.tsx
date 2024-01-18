@@ -1,5 +1,6 @@
 'use client'
 
+import { toast } from '@/components/ui/use-toast'
 import { RootState } from '@/store/store'
 import { redirect } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
@@ -17,6 +18,11 @@ export default function HomeLayout({
 
 	if (logined) {
 		redirect('/login')
+	} else {
+		toast({
+			variant: 'default',
+			title: 'Welcome to Dashboard',
+		})
 	}
 
 	return (

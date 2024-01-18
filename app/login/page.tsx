@@ -6,6 +6,8 @@ import { LuArrowUpRightFromCircle } from 'react-icons/lu'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
+import { ToastAction } from '@/components/ui/toast'
+import { toast } from '@/components/ui/use-toast'
 import { loginToPage } from '@/store/auth/auth.slice'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -17,12 +19,17 @@ export default function Login() {
 	const [password, setPassword] = useState('')
 	function handleLogin() {
 		const correctPassword = 'Oybek'
+		dispatch(loginToPage())
 
 		if (password === correctPassword) {
-			dispatch(loginToPage())
 			router.push('/')
 		} else {
-			alert('Incorrect password. Please try again.')
+			toast({
+				variant: 'destructive',
+				title: 'Password is Incorrect!.',
+				description: 'There was a problem with your request.',
+				action: <ToastAction altText='Try again'>Try again</ToastAction>,
+			})
 		}
 	}
 	return (
