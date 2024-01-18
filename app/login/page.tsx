@@ -8,6 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
+import { loginToPage } from '@/store/auth/auth.slice'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -18,6 +19,7 @@ export default function Login() {
 	const [password, setPassword] = useState('')
 	function handleLogin() {
 		const correctPassword = 'Oybek'
+		dispatch(loginToPage())
 
 		if (password === correctPassword) {
 			router.push('/')
