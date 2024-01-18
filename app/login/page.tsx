@@ -17,9 +17,11 @@ export default function Login() {
 	const router = useRouter()
 	const [showPassword, setShowPassword] = useState(false)
 	const [password, setPassword] = useState('')
+	dispatch(loginToPage())
+	console.log(loginToPage())
+
 	function handleLogin() {
 		const correctPassword = 'Oybek'
-		dispatch(loginToPage())
 
 		if (password === correctPassword) {
 			router.push('/')

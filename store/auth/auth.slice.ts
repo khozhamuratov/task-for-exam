@@ -14,6 +14,7 @@ export const authSlice = createSlice({
 	reducers: {
 		loginToPage: state => {
 			state.logined = false
+			state
 		},
 	},
 })
