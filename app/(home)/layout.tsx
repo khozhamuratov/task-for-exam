@@ -21,7 +21,7 @@ export default function HomeLayout({
 	if (logined) {
 		dispatch(loginToPage())
 		router.push('/login')
-	} else {
+	} else if (!logined) {
 		toast({
 			variant: 'default',
 			title: 'Welcome to Dashboard',
