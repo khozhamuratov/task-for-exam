@@ -8,7 +8,7 @@ import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
 import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 export default function Login() {
@@ -21,7 +21,7 @@ export default function Login() {
 		const correctPassword = 'Oybek'
 
 		if (password === correctPassword) {
-			router.push('/')
+			redirect('/')
 		} else {
 			toast({
 				variant: 'destructive',
