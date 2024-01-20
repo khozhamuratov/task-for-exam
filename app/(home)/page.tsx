@@ -2,7 +2,7 @@
 
 import { toast } from '@/components/ui/use-toast'
 import { RootState } from '@/store/store'
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 import Header from './components/header/header'
 import SidebarMenu from './components/sidebar/sidebar-menu'
