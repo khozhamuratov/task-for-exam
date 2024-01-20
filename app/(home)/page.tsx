@@ -1,10 +1,9 @@
 'use client'
 
 import { toast } from '@/components/ui/use-toast'
-import { loginToPage } from '@/store/auth/auth.slice'
 import { RootState } from '@/store/store'
-import { redirect } from 'next/navigation'
-import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/navigation'
+import { useSelector } from 'react-redux'
 import Header from './components/header/header'
 import SidebarMenu from './components/sidebar/sidebar-menu'
 import UserTable from './components/users-table/usersTable'
@@ -13,11 +12,10 @@ type Props = {}
 
 export default function Page(props: Props) {
 	const logined = useSelector((state: RootState) => state.auth.logined)
-	const dispatch = useDispatch()
+	const router = useRouter()
 
 	if (logined) {
-		dispatch(loginToPage())
-		redirect('/login')
+		router.push('/login')
 	} else {
 		toast({
 			variant: 'default',
