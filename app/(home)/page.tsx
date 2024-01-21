@@ -19,8 +19,7 @@ export default function Page(props: Props) {
 	useEffect(() => {
 		if (logined) {
 			dispatch(loginToPage())
-			router.push('/login')
-			router.replace('/')
+			router.replace('/login')
 		}
 	}, [])
 
