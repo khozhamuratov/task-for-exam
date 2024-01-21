@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input'
 import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
 import { loginToPage } from '@/store/auth/auth.slice'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
@@ -70,6 +71,7 @@ export default function Login() {
 							<Button onClick={() => handleLogin()} className='w-full'>
 								Login
 							</Button>
+							<Link href={'/'}>to page</Link>
 						</form>
 					</CardContent>
 				</Card>
