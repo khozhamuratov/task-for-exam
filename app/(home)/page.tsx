@@ -2,7 +2,6 @@
 import { useEffect } from 'react'
 
 import { toast } from '@/components/ui/use-toast'
-import { loginToPage } from '@/store/auth/auth.slice'
 import { RootState } from '@/store/store'
 import { useRouter } from 'next/navigation'
 import { useDispatch, useSelector } from 'react-redux'
@@ -19,7 +18,6 @@ export default function Page(props: Props) {
 
 	useEffect(() => {
 		if (logined) {
-			dispatch(loginToPage())
 			router.replace('/login')
 		}
 	}, [])
