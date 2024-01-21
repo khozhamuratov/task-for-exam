@@ -1,4 +1,3 @@
-'use server'
 import { createSlice } from '@reduxjs/toolkit'
 import { redirect } from 'next/navigation'
 
