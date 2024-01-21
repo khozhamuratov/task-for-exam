@@ -1,8 +1,6 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
-import { LuArrowUpRightFromCircle } from 'react-icons/lu'
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Input } from '@/components/ui/input'
@@ -10,7 +8,8 @@ import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
 import { loginToPage } from '@/store/auth/auth.slice'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { LuArrowUpRightFromCircle } from 'react-icons/lu'
 import { useDispatch } from 'react-redux'
 export default function Login() {
 	const dispatch = useDispatch()
@@ -23,7 +22,9 @@ export default function Login() {
 
 		if (password === correctPassword) {
 			dispatch(loginToPage())
-			router.push('/')
+			useEffect(() => {
+				router.push('/')
+			}, [])
 		} else {
 			toast({
 				variant: 'destructive',
