@@ -1,4 +1,6 @@
+'use server'
 import { createSlice } from '@reduxjs/toolkit'
+import { redirect } from 'next/navigation'
 
 interface IInitialStateType {
 	logined: boolean
@@ -14,6 +16,7 @@ export const authSlice = createSlice({
 	reducers: {
 		loginToPage: state => {
 			state.logined = false
+			redirect('/login')
 		},
 	},
 })
