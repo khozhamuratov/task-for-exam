@@ -27,7 +27,7 @@
 		"**/*.ts",
 		"**/*.tsx",
 		".next/types/**/*.ts",
-		"app/(home)/home"
+		"app/(home)/dashboard"
 	],
 	"exclude": ["node_modules"]
 }
