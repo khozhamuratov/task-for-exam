@@ -20,6 +20,7 @@ export default function Page(props: Props) {
 		if (logined) {
 			dispatch(loginToPage())
 			router.push('/login')
+			router.replace('/')
 		}
 	}, [])
 
