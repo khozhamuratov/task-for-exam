@@ -17,13 +17,8 @@ export default function Page(props: Props) {
 	useEffect(() => {
 		if (logined) {
 			router.push('/login')
-		} else {
-			toast({
-				variant: 'default',
-				title: 'Welcome to Dashboard',
-			})
 		}
-	}, [])
+	}, [logined])
 
 	if (!logined) {
 		toast({
