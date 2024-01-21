@@ -1,8 +1,9 @@
 'use client'
+import { useEffect } from 'react'
 
 import { toast } from '@/components/ui/use-toast'
 import { RootState } from '@/store/store'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useSelector } from 'react-redux'
 import Header from './components/header/header'
 import SidebarMenu from './components/sidebar/sidebar-menu'
@@ -13,10 +14,18 @@ type Props = {}
 export default function Page(props: Props) {
 	const logined = useSelector((state: RootState) => state.auth.logined)
 	const router = useRouter()
+	useEffect(() => {
+		if (logined) {
+			router.push('/login')
+		} else {
+			toast({
+				variant: 'default',
+				title: 'Welcome to Dashboard',
+			})
+		}
+	}, [])
 
-	if (logined) {
-		router.push('/login')
-	} else {
+	if (!logined) {
 		toast({
 			variant: 'default',
 			title: 'Welcome to Dashboard',
