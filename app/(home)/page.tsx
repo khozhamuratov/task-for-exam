@@ -18,7 +18,7 @@ export default function Page(props: Props) {
 		if (logined) {
 			router.push('/login')
 		}
-	}, [logined])
+	}, [])
 
 	if (!logined) {
 		toast({
