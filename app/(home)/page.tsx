@@ -17,12 +17,12 @@ export default function Page(props: Props) {
 	const router = useRouter()
 	const dispatch = useDispatch()
 
-	if (logined) {
-		dispatch(loginToPage())
-		useEffect(() => {
-			router.push('/login')
-		}, [])
-	}
+	useEffect(() => {
+		if (logined) {
+			dispatch(loginToPage())
+			router.replace('/login')
+		}
+	}, [])
 
 	if (!logined) {
 		toast({
