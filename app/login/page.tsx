@@ -21,7 +21,7 @@ export default function Login() {
 		const correctPassword = 'Oybek'
 
 		if (password === correctPassword) {
-			router.push('/')
+			router.replace('/')
 		} else {
 			toast({
 				variant: 'destructive',
