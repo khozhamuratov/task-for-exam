@@ -19,7 +19,7 @@ export default function AvatarBtn() {
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align='end'>
 					<DropdownMenuItem>
-						<button onClick={() => redirect('/')}>Logout</button>
+						<button onClick={redirect('/')}>Logout</button>
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
