@@ -5,9 +5,10 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 export default function AvatarBtn() {
+	const router = useRouter()
 	return (
 		<div>
 			<DropdownMenu>
@@ -19,7 +20,13 @@ export default function AvatarBtn() {
 				</DropdownMenuTrigger>
 				<DropdownMenuContent align='end'>
 					<DropdownMenuItem>
-						<button onClick={redirect('/')}>Logout</button>
+						<button
+							onClick={() => {
+								router.push('/')
+							}}
+						>
+							Logout
+						</button>
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
